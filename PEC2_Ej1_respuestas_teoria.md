@@ -13,6 +13,8 @@ Por tanto, TypeScript detecta este fallo en tiempo de compilación, mostrando un
 
 Esto tiene varias ventajas. Por un lado, se previene fallos en tiempo de compilación, lo cual mejora la experiencia de desarrollo (el desarrollador recibe feedback inmediato). Además, la depuración es más sencilla, al ser este tipo de errores facilmente localizables gracias a el subrayado en rojo.
 
+**Ejercicio 1**
+
 1. Para cada uno de los valores del fichero code2.ts, ¿Qué tipo de datos
 inferirá TypeScript? Explica por qué se ha inferido este tipo de datos
 
@@ -83,9 +85,28 @@ Error: “Object is of type 'unknown'.”
 
 Por qué: unknown requiere refinamiento de tipo antes de usarlo. No puedes hacer operaciones aritméticas sin comprobar que es número.
 
-3.
+3. ¿Cuál es la diferencia entre una clase y una interface en TypeScript?
 
 En TypeScript, una interfaz define la forma o estructura que debe tener un objeto, sirviendo como un formato que otras clases u objetos deben cumplir, pero sin incluir ninguna implementación y desapareciendo al compilar a JavaScript. Por otro lado una clase no solo define la estructura, sino también el comportamiento al incluir métodos, propiedades y otra lógica interna. 
 
 Las clases existen en tiempo de ejecuión y se puede instanciar. Las interfaces solo se usan en tiempo de compilacion para asegurarnos de la consitencia de tipos.
+
+**Ejercicio 2**
+
+a. Analiza el fichero tsconfig indica con comentarios sobre este fichero
+que significan y para qué sirven cada una de las opciones del fichero tsconfig.json.
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es2015", -> Versión de JS que generará el compilador. ES2015 = soporte de clases, let/const, etc.
+    "module": "commonjs", -> Sistema de módulos del JS emitido. CommonJS = require/module.exports (Node clásico).
+    "outDir": "./dist", -> Carpeta de salida para los .js (y mapas) generados.
+    "rootDir": "./src", -> Carpeta raíz del código fuente .ts/.tsx; preserva la estructura al compilar.
+    "strict": true, -> Activa el “modo estricto” (conjunto de comprobaciones de tipos rigurosas).
+    "incremental": true, -> Compilaciones incrementales: solo recompila lo que cambió para acelerar builds.
+    "tsBuildInfoFile": "./buildcache" -> Ruta del archivo .tsbuildinfo con metadatos de compilación incremental.
+  }
+}
+
+
 

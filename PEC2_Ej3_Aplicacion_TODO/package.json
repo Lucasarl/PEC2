@@ -1,0 +1,46 @@
+{
+  "name": "todo-app-typescript",
+  "version": "1.0.0",
+  "description": "A TypeScript TODO application following MVC architecture",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "build": "tsc",
+    "build:webpack": "webpack --mode=production",
+    "dev": "webpack serve --mode=development",
+    "dev:tsc": "tsc --watch & http-server . -p 8080",
+    "watch": "tsc --watch",
+    "watch:webpack": "webpack --mode=development --watch",
+    "clean": "rimraf dist",
+    "start": "http-server dist -p 8080",
+    "start:webpack": "webpack serve --mode=development --open",
+    "lint": "eslint src/**/*.ts",
+    "type-check": "tsc --noEmit",
+    "build:all": "npm run clean && npm run build && npm run build:webpack"
+  },
+  "keywords": [
+    "typescript",
+    "mvc",
+    "todo",
+    "frontend",
+    "webpack"
+  ],
+  "author": "Student",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^18.0.0",
+    "rimraf": "^5.0.0",
+    "http-server": "^14.0.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "ts-loader": "^9.5.0",
+    "html-webpack-plugin": "^5.5.3",
+    "css-loader": "^6.8.1",
+    "style-loader": "^3.3.3"
+  },
+  "browserslist": [
+    "defaults",
+    "not IE 11"
+  ]
+}
